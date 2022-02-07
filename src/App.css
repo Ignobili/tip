@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono");
+
+body {
+  background-color: hsl(185, 41%, 84%);
+  position: relative;
+}
+
+p.splitter {
+  font-family: "Space Mono", "monospace";
+  font-weight: 700;
+  position: relative;
+  text-align: center;
+  margin-top: 7%;
+  font-size: 36px;
+  color: hsl(183, 100%, 15%);
+  letter-spacing: 10px;
+}
+
+.white-box {
+  width: 70rem;
+  height: 35rem;
+  border-radius: 30px;
+  margin: auto;
+  background-color: hsl(0, 0%, 100%);
+}
+
+
+.input-box{
+  margin-top: 2.5rem;
+  margin-left: 2rem;
+}
+.green-box {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 15px;
+  margin-top: 2.5rem;
+  margin-left: 2.5rem;
+  background-color: hsl(183, 100%, 15%);
+}
+div.part{  
+  margin-top: 2rem;
+  margin-left: 2rem;
+  display: flex;
+}
+p.main{
+  color: hsl(189, 41%, 97%);
+  font-family: "Space Mono", "monospace";
+  font-weight: 700;
+  font-size: 18px;
+}
+
+p.side{
+  font-size: 14px;
+  font-family: "Space Mono","monospace";
+  color: hsl(184, 14%, 56%);
+}
+
+.tip{
+  font-family: "Space Mono", "monospace";
+  font-weight: 700;
+  font-size: 36px;
+  color: hsl(172, 67%, 45%); 
+  padding-left: 5rem;
+  padding-right: auto; 
+}
+.sum{
+  font-family: "Space Mono", "monospace";
+  font-weight: 700;
+  font-size: 36px;
+  color: hsl(172, 67%, 45%);
+  margin-left: 120px;
+  margin-top: -9px;
+}
+
+button.reset{
+  margin-top: 12rem;
+  margin-left: 5rem;
+  color:hsl(183, 100%, 15%);
+  font-family: "Space Mono", "monospace";
+  font-weight: 700;
+  background-color: hsl(172, 67%, 45%);
+  width: 20rem;
+  height: 40px;
+  border-radius: 5px;
+}
+
+button.reset-empty{
+  margin-top: 12rem;
+  margin-left: 5rem;
+  color:hsl(183, 100%, 15%);
+  background-color: hsl(186, 14%, 43%);
+  font-family: "Space Mono", "monospace";
+  font-weight: 700;
+  width: 20rem;
+  height: 40px;
+  border-radius: 5px;
+}
+
+#dollar{
+  background-image:url("/public/icon-dollar.svg");   
+  background-repeat: no-repeat;
+  display: flex;
+  border-radius: 5px;
+  height: 30px;
+  width: 20px;
+  margin-top: 20px;
+  margin-left: 15px;
+  text-align: right;
+  position: absolute;
+}
+
+#person{
+  background-image:url("/public/icon-person.svg");   
+  background-repeat: no-repeat;
+  display: flex;
+  border-radius: 5px;
+  height: 30px;
+  width: 20px;
+  margin-top: 20px;
+  margin-left: 15px;
+  text-align: right;
+  position: absolute;
+}
+
+.input{
+  font-family: "Space Mono", "monospace";
+  font-weight: 700;
+  font-size: 24px;
+  display: flex;
+  text-align: right;
+  width: 30rem;
+  border: 0;
+  border-radius: 10px;
+  background-color: hsl(189, 41%, 97%);
+  color:hsl(183, 100%, 15%);
+}
+input::placeholder{
+  color:hsl(186, 14%, 43%)
+}
+p.right-text{
+  font-family: "Space Mono", "monospace";
+  font-weight: 500;
+  font-size: 14px;
+  color:hsl(183, 100%, 15%);
+}
+button.percentage{
+ font-family: "Space Mono", "monospace";
+ font-weight: 700;
+ font-size: 24px;
+ color: hsl(0, 0%, 100%);
+ background-color: hsl(183, 100%, 15%);
+ border-radius: 5px;
+ width: 160px;
+ height: 60px;
+ margin-top: 10px;
+}
+button.percentage:hover{
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
+}
+
+button.custom{
+  font-family: "Space Mono", "monospace";
+  font-weight: 700;
+  font-size: 24px;
+  color: hsl(183, 100%, 15%);;
+  background-color: hsl(189, 41%, 97%);
+  border-radius: 5px;
+  width: 160px;
+  height: 60px;
+  margin-top: 10px;
+ }
