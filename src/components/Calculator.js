@@ -4,12 +4,22 @@ import Empty from "./Empty";
 
 function Calculator() {
   let isEmpty = false;
-  let [bill, setBill] = useState(0);
-  let [people, setPeople] = useState(1);
+  let [bill, setBill] = useState("");
+  let [people, setPeople] = useState("");
+  let [percent, setPercent] = useState(0);
+  let tip = (parseFloat(bill) / parseInt(people)) * (percent/100);
+  let sum = parseFloat(tip) + parseFloat(bill) / parseInt(people);
+  console.log(tip);
 
-  let tip = bill / people;
-  let sum = parseInt(tip) + parseInt(bill) / parseInt(people);
-  console.log(sum.length);
+
+  if (people === "" || bill === "") {
+    sum = 0;
+    tip = 1;
+  }
+  if (tip === "") {
+    tip = 0;
+  }
+
   if (sum.length > 7) {
     parseFloat(sum).toFixed(2);
   }
@@ -27,13 +37,20 @@ function Calculator() {
     isEmpty = false;
   }
 
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setPercent(e.target.value);
+  }
+
   function Render() {
     if (isEmpty) {
-      return <Empty/>;
+      return <Empty />;
     } else {
-      return <Button/>;
+      return <Button />;
     }
   }
+
 
   return (
     <div>
@@ -43,8 +60,8 @@ function Calculator() {
             <label for="bill">
               <p className="right-text">Bill</p>
               <i id="dollar"></i>
-              <input 
-                className="input"
+              <input
+                className="input-bill"
                 type="text"
                 value={bill}
                 onChange={(e) => setBill(e.target.value)}
@@ -54,19 +71,55 @@ function Calculator() {
             <label for="tip">
               <p className="right-text pt-16">Select Tip %</p>
               <div className="grid grid-cols-3 grid-rows-2 gap-3">
-                <button className="percentage">5%</button>
-                <button className="percentage">10%</button>
-                <button className="percentage">15%</button>
-                <button className="percentage">25%</button>
-                <button className="percentage">50%</button>
-                <button className="custom">Custom</button>
+                <button
+                  className="percentage"
+                  onClick={handleSubmit}
+                  value={5}
+                >
+                  5%
+                </button>
+                <button
+                  className="percentage"
+                  onClick={handleSubmit}
+                  value={10}
+                >
+                  10%
+                </button>
+                <button
+                  className="percentage"
+                  onClick={handleSubmit}
+                  value={15}
+                >
+                  15%
+                </button>
+                <button
+                  className="percentage"
+                  onClick={handleSubmit}
+                  value={25}
+                >
+                  25%
+                </button>
+                <button
+                  className="percentage"
+                  onClick={handleSubmit}
+                  value={50}
+                >
+                  50%
+                </button>
+                <input
+                className="custom"
+                type="text"
+                onChange={(e) => setPercent(e.target.value)}
+                placeholder="Custom"
+              />
+                
               </div>
             </label>
             <label for="people">
-              <p className="right-text pt-16">People</p>
+              <p className="right-text pt-16">Number of People</p>
               <i id="person"></i>
               <input
-                className="input"
+                className="input-people"
                 type="text"
                 value={people}
                 onChange={(e) => setPeople(e.target.value)}
@@ -82,7 +135,7 @@ function Calculator() {
               <p className="side">/ person</p>
             </p>
             <div className="tip">
-              <p>${parseFloat(bill).toFixed(2)}</p>
+              <p>${parseFloat(tip).toFixed(2)}</p>
             </div>
           </div>
           <div className="part">

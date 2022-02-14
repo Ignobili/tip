@@ -1,7 +1,10 @@
-function Button(props) {
-    function reset() {
-        window.location.reload();
-    }
+
+function Button() {
+ 
+
+  function reset() {
+    window.location.reload();
+      };
   return (
     <button onClick={reset} className="reset">
       RESET
